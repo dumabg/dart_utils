@@ -1,3 +1,4 @@
+// Class for specify Api calls configuration
 class ApiConfig {
   static String? _urlScheme;
   static String get urlScheme => _urlScheme!;
