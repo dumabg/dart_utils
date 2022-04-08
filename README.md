@@ -2,25 +2,25 @@ Dart utilities library
 
 ### Features
 
-####api
+#### api
 ApiConfig
 ApiProtoc
 ServerStatusException
 
-####extensions
+#### extensions
 ListMapWithIndex
 
-####extensions / date_time
+#### extensions / date_time
 DateTimeModifiers
 Months
 
-####extensions / string
+#### extensions / string
 Capitalize
 NormalizeSpaces
 OnlyNumbersAndLetters
 RemoveChars
 
-####image
+#### image
 Image
 
 
