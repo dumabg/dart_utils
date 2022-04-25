@@ -8,7 +8,8 @@ ApiProtoc
 ServerStatusException
 
 #### extensions
-ListMapWithIndex
+MapWithIndex on List
+Source on StackTrace
 
 #### extensions / date_time
 DateTimeModifiers
