@@ -88,7 +88,7 @@ class ApiProtoc {
                 path: path),
             headers: headers,
             body: message.writeToBuffer())
-        .timeout(const Duration(seconds: 15))
+        .timeout(const Duration(seconds: 30))
         .then(($http.Response response) {
       var statusCode = response.statusCode;
       if (statusCode != 200) {
