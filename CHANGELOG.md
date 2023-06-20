@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.2.1
 
-* TODO: Describe initial release.
+* Upgrade to Dart 3
