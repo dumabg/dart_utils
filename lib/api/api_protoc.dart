@@ -92,7 +92,8 @@ class ApiProtoc {
         .then(($http.Response response) {
       final statusCode = response.statusCode;
       if (statusCode != 200) {
-        throw ServerStatusException(statusCode, response.reasonPhrase);
+        throw ServerStatusException(
+            path, statusCode, response.reasonPhrase, message.toDebugString());
       }
       return response.bodyBytes;
     });

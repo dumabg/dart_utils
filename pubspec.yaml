@@ -14,3 +14,6 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+  mock_http:
+    git:
+      url: https://github.com/dumabg/mock_http.git
