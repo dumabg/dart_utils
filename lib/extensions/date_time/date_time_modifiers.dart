@@ -2,8 +2,9 @@
 
 extension DateTimeModifiers on DateTime {
   DateTime addMonths(int num) {
-    final int months = (month - 1) +
-        num; // month must be zero based to calculate divisions of yearOffset and newMonth
+    // month must be zero based for calculating divisions of yearOffset
+    //and newMonth
+    final int months = (month - 1) + num;
     final int yearOffset = months ~/ 12;
     final int newMonth = (months % 12) + 1;
     final int lastDayInMonth = _daysInMonth(newMonth);
@@ -20,7 +21,8 @@ extension DateTimeModifiers on DateTime {
 
   DateTime addDays(int num) {
     DateTime newDateTime = add(Duration(days: num));
-    // If changing hours adding days, DST has ocurred. https://github.com/dart-lang/sdk/issues/46573
+    // If changing hours adding days, DST has ocurred.
+    // https://github.com/dart-lang/sdk/issues/46573
     if (newDateTime.hour != hour) {
       newDateTime = DateTime(year, month, day, 1).add(Duration(days: num));
       newDateTime = DateTime(newDateTime.year, newDateTime.month,
@@ -34,7 +36,7 @@ extension DateTimeModifiers on DateTime {
       // Leap years are used since 1582.
       year >= 1582 && year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 
-  int _daysInMonth(final int month) {
+  int _daysInMonth(int month) {
     final days = [
       31, // January
       if (isLeapYear) 29 else 28, // February

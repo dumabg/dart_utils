@@ -1,8 +1,8 @@
 import 'dart:typed_data';
+import 'package:http/http.dart' as $http;
+import 'package:protobuf/protobuf.dart' as $pb;
 import 'api_config.dart';
 import 'server_status_exception.dart';
-import 'package:protobuf/protobuf.dart' as $pb;
-import 'package:http/http.dart' as $http;
 //import 'package:http2/transport.dart';
 //import 'dart:io';
 
@@ -11,18 +11,18 @@ class ApiProtoc {
 
   static Future<Uint8List> call($pb.GeneratedMessage message) async {
     String messageName = message.info_.messageName;
-    if (messageName.endsWith("Request")) {
+    if (messageName.endsWith('Request')) {
       messageName =
-          messageName.substring(0, messageName.length - "Request".length);
+          messageName.substring(0, messageName.length - 'Request'.length);
     }
     Map<String, String>? headers;
     if (getToken != null) {
-      String? idToken = await getToken!();
+      final String? idToken = await getToken!();
       if (idToken != null) {
         headers = <String, String>{'Authorization': idToken};
       }
     }
-    int? api = ApiConfig.api;
+    final int? api = ApiConfig.api;
     String path = '/$messageName';
     if (api != null) {
       path = '/$api$path';
@@ -40,7 +40,7 @@ class ApiProtoc {
     //     socket = await SecureSocket.connect(ulrHost, ApiConfig.urlPort,
     //         supportedProtocols: ['h2']);
     //     if ((socket as SecureSocket).selectedProtocol != 'h2') {
-    //       throw Exception('Failed to negogiate http/2 via alpn. Maybe server '
+    //       throw Exception('Failed to negotiate http/2 via alpn. Maybe server '
     //           "doesn't support http/2.");
     //     }
     //   } else {
@@ -90,7 +90,7 @@ class ApiProtoc {
             body: message.writeToBuffer())
         .timeout(const Duration(seconds: 30))
         .then(($http.Response response) {
-      var statusCode = response.statusCode;
+      final statusCode = response.statusCode;
       if (statusCode != 200) {
         throw ServerStatusException(statusCode, response.reasonPhrase);
       }

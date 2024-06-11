@@ -1,9 +1,9 @@
 extension RemoveChars on String {
   String removeChars(String chars) {
-    var result = StringBuffer();
+    final result = StringBuffer();
     for (int i = 0; i < length; i++) {
-      var c = this[i];
-      if (chars.indexOf(c) == -1) {
+      final c = this[i];
+      if (!chars.contains(c)) {
         result.write(c);
       }
     }
@@ -11,11 +11,13 @@ extension RemoveChars on String {
   }
 
   String removeWhiteSpace() {
-    if (this.length <= 0) return '';
-    return this.trim().replaceAll(RegExp(r'\s+'), '');
+    if (length <= 0) {
+      return '';
+    }
+    return trim().replaceAll(RegExp(r'\s+'), '');
   }
 
   String removeSpecialChars() {
-    return this.replaceAll(RegExp(r'[^a-zA-Z 0-9]+'), '');
+    return replaceAll(RegExp('[^a-zA-Z 0-9]+'), '');
   }
 }

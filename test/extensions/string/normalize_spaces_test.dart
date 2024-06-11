@@ -1,10 +1,9 @@
-import 'package:test/test.dart';
-
 import 'package:dart_utils/extensions/string/normalize_spaces.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('String normalizeSpaces extension', () {
-    var cad = '  Hello  world ';
+    const String cad = '  Hello  world ';
     expect(cad.normalizeSpaces(), 'Hello world');
   });
 }

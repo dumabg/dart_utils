@@ -4,9 +4,9 @@ extension NormalizeSpaces on String {
     while ((i < length) && (this[i] == ' ')) {
       i++;
     }
-    var result = StringBuffer();
+    final result = StringBuffer();
     while (i < length) {
-      String c = this[i];
+      final String c = this[i];
       if (c == ' ') {
         while ((i < length) && (this[i] == ' ')) {
           i++;

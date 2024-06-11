@@ -15,7 +15,7 @@ extension OnlyNumbersAndLetters on String {
   String onlyNumbersAndLetters() {
     var result = '';
     for (int i = 0; i < length; i++) {
-      var c = codeUnitAt(i);
+      final c = codeUnitAt(i);
       if (((c >= codeUnit_a) && (c <= codeUnit_z)) ||
           ((c >= codeUnit_A) && (c <= codeUnit_Z)) ||
           ((c >= codeUnit_0) && (c <= codeUnit_9))) {
@@ -26,10 +26,10 @@ extension OnlyNumbersAndLetters on String {
   }
 
   String onlyNumbersLettersAndSpaces({bool normalizeSpaces = false}) {
-    var result = StringBuffer();
+    final result = StringBuffer();
     bool inSpace = false;
     for (int i = 0; i < length; i++) {
-      var c = codeUnitAt(i);
+      final c = codeUnitAt(i);
       if (((c >= codeUnit_a) && (c <= codeUnit_z)) ||
           ((c >= codeUnit_A) && (c <= codeUnit_Z)) ||
           ((c >= codeUnit_0) && (c <= codeUnit_9))) {
