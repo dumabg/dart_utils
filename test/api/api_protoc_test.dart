@@ -26,7 +26,8 @@ void main() {
       await ApiProtoc.call(request);
     } catch (e) {
       if (e is ServerStatusException) {
-        expect(e.toString(), '''ServerStatusException: 400 Bad Request
+        expect(e.toString(), '''
+ServerStatusException: 400 Bad Request
 /1/GamePoints
 experienceId: TestId
 points: 100

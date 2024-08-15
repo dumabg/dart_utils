@@ -25,4 +25,8 @@ RemoveChars
 Image
 
 
+# Versions
+## 2.0.0+2
+- Upgrade to sdk 3.5.0. Flutter 3.24.0.
+
 
