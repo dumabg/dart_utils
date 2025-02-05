@@ -21,7 +21,11 @@ class ApiProtoc {
     if (getToken != null) {
       final String? idToken = await getToken!();
       if (idToken != null) {
-        headers = <String, String>{'Authorization': idToken};
+        if (headers == null) {
+          headers = <String, String>{'Authorization': idToken};
+        } else {
+          headers['Authorization'] = idToken;
+        }
       }
     }
     final int? api = ApiConfig.api;
