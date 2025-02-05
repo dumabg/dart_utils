@@ -1,6 +1,6 @@
 name: dart_utils
 description: Dart utils by Miguel Angel Besalduch Garcia
-version: 2.1.0
+version: 2.1.1
 homepage:
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   http: ^1.0.0
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
   mock_http:
