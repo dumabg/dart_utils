@@ -26,6 +26,12 @@ Image
 
 
 # Versions
+## 2.1.2
+- Pub upgrade
+  
+## 2.1.1
+- ApiProtoc headers loss when has token
+  
 ## 2.1.0
 - ApiProtoc getHeaders
 
