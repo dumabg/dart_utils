@@ -27,7 +27,7 @@ Image
 
 # Versions
 ## 2.1.2
-- Pub upgrade
+- Upgrade protobuf to 4.1.0
   
 ## 2.1.1
 - ApiProtoc headers loss when has token
