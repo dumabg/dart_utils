@@ -152,10 +152,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "0b4c6092dfae4668ad47c6d5542fd0a74b53b357"
+      resolved-ref: "6089de7ca6d4d193e1b3118d61e3df182d548f73"
       url: "https://github.com/dumabg/mock_http.git"
     source: git
-    version: "3.0.0"
+    version: "3.0.1"
   path:
     dependency: transitive
     description:
@@ -258,5 +258,5 @@ packages:
     source: hosted
     version: "1.1.1"
 sdks:
-  dart: ">=3.8.0 <4.0.0"
+  dart: ">=3.9.0 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"
