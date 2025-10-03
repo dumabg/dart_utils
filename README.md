@@ -26,6 +26,9 @@ Image
 
 
 # Versions
+## 2.2.0
+- ApiProtoc getHeaders is a Future.
+  
 ## 2.1.2
 - Upgrade protobuf to 4.1.0
   

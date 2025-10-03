@@ -6,17 +6,19 @@ import 'server_status_exception.dart';
 
 class ApiProtoc {
   static Future<String?> Function()? getToken;
-  static Map<String, String>? Function()? getHeaders;
+  static Future<Map<String, String>?> Function()? getHeaders;
 
   static Future<Uint8List> call($pb.GeneratedMessage message) async {
     String messageName = message.info_.messageName;
     if (messageName.endsWith('Request')) {
-      messageName =
-          messageName.substring(0, messageName.length - 'Request'.length);
+      messageName = messageName.substring(
+        0,
+        messageName.length - 'Request'.length,
+      );
     }
     Map<String, String>? headers;
     if (getHeaders != null) {
-      headers = getHeaders!();
+      headers = await getHeaders!();
     }
     if (getToken != null) {
       final String? idToken = await getToken!();
@@ -35,21 +37,27 @@ class ApiProtoc {
     }
     return $http
         .post(
-            Uri(
-                scheme: ApiConfig.urlScheme,
-                host: ApiConfig.ulrHost,
-                port: ApiConfig.urlPort,
-                path: path),
-            headers: headers,
-            body: message.writeToBuffer())
+          Uri(
+            scheme: ApiConfig.urlScheme,
+            host: ApiConfig.ulrHost,
+            port: ApiConfig.urlPort,
+            path: path,
+          ),
+          headers: headers,
+          body: message.writeToBuffer(),
+        )
         .timeout(const Duration(seconds: 30))
         .then(($http.Response response) {
-      final statusCode = response.statusCode;
-      if (statusCode != 200) {
-        throw ServerStatusException(
-            path, statusCode, response.reasonPhrase, message.toDebugString());
-      }
-      return response.bodyBytes;
-    });
+          final statusCode = response.statusCode;
+          if (statusCode != 200) {
+            throw ServerStatusException(
+              path,
+              statusCode,
+              response.reasonPhrase,
+              message.toDebugString(),
+            );
+          }
+          return response.bodyBytes;
+        });
   }
 }
