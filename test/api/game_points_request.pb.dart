@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: game_points_request.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class GamePointsRequest extends $pb.GeneratedMessage {
   factory GamePointsRequest({
@@ -49,13 +51,9 @@ class GamePointsRequest extends $pb.GeneratedMessage {
         protoName: 'alwaysRateRanking')
     ..hasRequiredFields = false;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  GamePointsRequest clone() => GamePointsRequest()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GamePointsRequest clone() => createEmptyInstance();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GamePointsRequest copyWith(void Function(GamePointsRequest) updates) =>
       super.copyWith((message) => updates(message as GamePointsRequest))
           as GamePointsRequest;
@@ -65,8 +63,6 @@ class GamePointsRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GamePointsRequest create() => GamePointsRequest._();
   GamePointsRequest createEmptyInstance() => create();
-  static $pb.PbList<GamePointsRequest> createRepeated() =>
-      $pb.PbList<GamePointsRequest>();
   @$core.pragma('dart2js:noInline')
   static GamePointsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GamePointsRequest>(create);
@@ -82,7 +78,7 @@ class GamePointsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasExperienceId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearExperienceId() => clearField(1);
+  void clearExperienceId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.int get points => $_getIZ(1);
@@ -94,7 +90,7 @@ class GamePointsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPoints() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPoints() => clearField(2);
+  void clearPoints() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.bool get alwaysRateRanking => $_getBF(2);
@@ -106,7 +102,7 @@ class GamePointsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasAlwaysRateRanking() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAlwaysRateRanking() => clearField(3);
+  void clearAlwaysRateRanking() => $_clearField(3);
 }
 
 class GamePointsResponse extends $pb.GeneratedMessage {
@@ -134,13 +130,9 @@ class GamePointsResponse extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'position', $pb.PbFieldType.O3)
     ..hasRequiredFields = false;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  GamePointsResponse clone() => GamePointsResponse()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GamePointsResponse clone() => createEmptyInstance();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GamePointsResponse copyWith(void Function(GamePointsResponse) updates) =>
       super.copyWith((message) => updates(message as GamePointsResponse))
           as GamePointsResponse;
@@ -150,8 +142,6 @@ class GamePointsResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GamePointsResponse create() => GamePointsResponse._();
   GamePointsResponse createEmptyInstance() => create();
-  static $pb.PbList<GamePointsResponse> createRepeated() =>
-      $pb.PbList<GamePointsResponse>();
   @$core.pragma('dart2js:noInline')
   static GamePointsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GamePointsResponse>(create);
@@ -167,7 +157,7 @@ class GamePointsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPosition() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPosition() => clearField(1);
+  void clearPosition() => $_clearField(1);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

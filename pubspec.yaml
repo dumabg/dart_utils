@@ -1,13 +1,13 @@
 name: dart_utils
 description: Dart utils
-version: 2.2.0
+version: 2.2.1
 homepage:
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.1
   
 dependencies:
-  protobuf: ^5.0.0
+  protobuf: ^6.0.0
   http: ^1.0.0
 
 dev_dependencies:
